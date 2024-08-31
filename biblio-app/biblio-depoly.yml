@@ -1,1 +1,19 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: biblio
+spec:
+  replicas: 3  # Ajoutez le nombre de réplicas
+  selector:
+    matchLabels:
+      app: biblio
+  template:
+    metadata:
+      labels:
+        app: biblio
+    spec:
+      containers:
+      - name: biblio
+        image: salsabilhamraoui510802/biblioapp:1.0
+        ports:
+        - containerPort: 80  # Assurez-vous que ce port correspond à ce qui est exposé par le Service
