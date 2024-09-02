@@ -2,15 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:  biblio-app
-  namespace: argocd
+  name: biblio-app
+  namespace: argocdbiblioApp
 spec:
   project: default
   destination:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    path: astonvilla-app # you chould provide the folder in the git repo
+    path: biblio-app # you chould provide the folder in the git repo
     repoURL: "https://github.com/salsabylHam/argocdbiblioApp.git" # the url of the github repository
     targetRevison: HEAD # the branch of the github repository.We can use Head or a specific version
   syncPolicy:
